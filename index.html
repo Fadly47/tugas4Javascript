@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistem Manajemen Transportasi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div id="welcomeSection" class="gradient-header">
+        <h2 class="mb-3">🚖 Selamat Datang di Sistem Manajemen Transportasi</h2>
+        <p class="lead">Kelola penyewaan kendaraan dengan mudah dan efisien</p>
+        <button class="btn btn-light btn-lg mt-3" onclick="masukSistem()">Masuk ke Sistem</button>
+      </div>
+
+      <div id="mainSection" style="display: none">
+        <div class="card card-custom mb-4 p-4">
+          <h4 class="mb-3">📝 Form Penyewaan Kendaraan</h4>
+          <form id="formPelanggan">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <input type="text" id="nama" class="form-control" placeholder="Nama Pelanggan" required />
+              </div>
+              <div class="col-md-4">
+                <input type="text" id="telepon" class="form-control" placeholder="Nomor Telepon" required />
+              </div>
+              <div class="col-md-4">
+                <select id="kendaraan" class="form-select" required>
+                  <option value="">-- Pilih Kendaraan --</option>
+                  <option value="Mobil">Mobil</option>
+                  <option value="Motor">Motor</option>
+                  <option value="Bus">Sepeda</option>
+                  <option value="Bus">Skuter</option>
+                  <option value="Bus">motor listrik</option>
+                  <option value="Bus">mobil listrik</option>
+                </select>
+              </div>
+              <div class="col-12 text-end">
+                <button type="submit" class="btn btn-gradient mt-3">🚀 Sewa Kendaraan</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Daftar Pelanggan -->
+        <div class="card card-custom p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">📋 Daftar Pelanggan yang Menyewa Kendaraan</h5>
+            <input type="text" id="searchInput" class="form-control w-25" placeholder="🔍 Cari pelanggan..." />
+          </div>
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Nomor Telepon</th>
+                <th>Kendaraan Disewa</th>
+                <th class="text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tabelPelanggan"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
